@@ -1,0 +1,42 @@
+#gallery-page
+    padding: 170px 40px 0
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    .heading
+        text-align: center
+        margin-bottom: 40px
+    .collage
+        display: grid
+        // grid-template-rows: repeat(auto-fit, minmax(200px, 1fr))
+        grid-template-columns: repeat(4, 1fr)
+        grid-template-rows: repeat(3, 250px)
+        gap: 15px
+
+        button
+            overflow: hidden
+            border: 2px solid #FF3D00
+            border-radius: 20px
+            padding: 0
+            &:hover
+                img
+                    scale: 1.1
+        img
+            width: 100%
+            height: 100%
+            scale: 1
+            object-fit: cover
+            transition: scale .4s
+
+        img.portrait
+            grid-row: span 2
+
+        img.landscape
+            grid-column: span 2
+
+@media only screen and (max-width: 600px)
+    #gallery-page
+        .collage
+            display: flex
+            flex-direction: column

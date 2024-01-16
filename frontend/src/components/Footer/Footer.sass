@@ -1,0 +1,83 @@
+#footer
+    display: flex
+    flex-direction: column
+    
+    position: absolute
+    width: 100%
+
+    h1
+        font-family: "El Messiri"
+        font-size: 36px
+        font-weight: 700
+        color: #6E8236
+    
+    
+
+    .footer-body
+        display: flex
+        justify-content: space-between
+        align-items: center
+        background-color: #FCD9B7
+        font-family: "Vazirmatn"
+        font-size: 20px
+        padding: 0px 155px
+
+        .contact
+        
+            img
+                margin-right: 10px
+
+
+
+        .discover
+            width: 359px
+            ul
+                list-style-type: none
+                text-align: right
+                font-weight: 700
+            li
+                margin-bottom: 10px
+                cursor: pointer
+            
+                
+    
+
+        .introduction
+            width: 359px
+            text-align: right
+            h1
+                text-align: right
+                cursor: pointer
+                
+                
+            p
+                font-weight: 600
+        
+    .footer-end
+        background-color: #FF3D00
+        height: 62px
+        font-family: "Cairo"
+        font-size: 20px
+        font-weight: 700
+        color: white
+        vertical-align: middle
+        line-height: 62px        
+
+@media only screen and (max-width: 600px)
+    #footer
+        .footer-body
+            flex-direction: column
+            padding: 0px 40px
+            .contact
+                padding-top: 20px
+            .discover
+                order: 3
+                ul
+                    text-align: center 
+                    padding: 0px
+            .introduction
+                order: 2
+                h1
+                    text-align: center
+                p
+                    text-align: center

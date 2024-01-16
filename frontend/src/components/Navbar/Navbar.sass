@@ -1,0 +1,94 @@
+@use '../../variables' as g
+
+.navbar
+    height: g.$navbar-height
+    background-color: #FCD9B7
+    display: flex
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 10
+    width: 100%
+    align-items: center
+    justify-content: space-between
+    cursor: pointer
+    div
+        color: #6E8236
+        font-size: 38px
+        font-weight: 700
+        margin-left: 145px
+    ul
+        margin: 0px
+        white-space: nowrap
+        height: 100%
+        display: flex
+        flex-direction: row
+        justify-content: center
+        align-items: center
+        li
+            position: relative
+            margin-right: 30px
+            font-size: 26px
+            font-weight: 700
+            display: inline-block
+            height: 100%
+            // border-bottom: 4px solid transparent
+            cursor: pointer
+            transition: color .2s
+            
+            box-sizing: border-box
+
+            &:not(.menu-icon)
+                padding-top: 15px
+                
+            &:hover
+                color: #6e8236
+                // border-bottom: 4px solid #6e8236
+            &:hover::after
+                width: 100%
+            &::after
+                content: ""
+                display: block
+                position: absolute
+                top: 0px
+                width: 0%
+                height: 5px
+                left: 50%
+                transform: translateX(-50%)
+                background: #6e8236
+
+                transition: all 0.2s 
+        .menu-icon
+            display: none
+            &:hover
+                border: none
+    .dropdown
+        position: absolute
+        top: g.$navbar-height
+        width: 100vw
+        background-color: #FFF0E2
+        margin-left: 0px
+        text-align: right
+        div
+            font-size: 24px
+            color: black
+            margin: 10px 
+
+
+
+
+@media only screen and (max-width: 600px)
+    .navbar
+        div
+            margin-left: 30px
+        .dropdown
+            div
+                margin: 30px
+        ul
+            .menu-icon
+                display: inline
+                img
+                    margin-top: 10px
+                    width: 50px
+            li
+                display: none

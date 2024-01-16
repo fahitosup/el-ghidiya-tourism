@@ -1,0 +1,99 @@
+#events-page
+    position: relative
+    width: 100%
+    margin-top: 100px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+    .bgr
+        position: absolute
+        width: 100%
+        height: 100%
+        left: 50%
+        top: 50%
+        transform: translate(-50%, -50%) scaleX(2)
+        mix-blend-mode: color-burn
+    .heading
+        z-index: 4
+        margin: 50px
+
+    .events
+        z-index: 1
+        display: flex
+        flex-direction: column
+        width: 100%
+
+    .events-cards
+        z-index: 1
+        display: grid
+        grid-template-columns: repeat(3, minmax(300px, 1fr))
+        // grid-template-rows: repeat(3, 400px)
+        padding: 0 100px
+        column-gap: 30px
+        row-gap: 30px
+
+        .events-card
+            border-radius: 25px
+            border: 1px solid red
+            background: white
+            overflow: hidden
+            .events-card-image-container
+                height: 250px
+                overflow: hidden
+                > img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover
+                    transition: scale 1s ease-in-out
+            &:hover
+                .events-card-image-container
+                    > img
+                        scale: 1.3
+                .button-with-icon
+                    filter: hue-rotate(284deg)
+            .card-description
+                display: flex
+                flex-direction: column
+                padding: 8px
+                h3
+                    font-size: 20px
+                    font-weight: 700
+                    text-align: right
+                    margin: 0
+                    color: #6E8236
+                p
+                    font-family: "Vazirmatn"
+                    font-size: 12px
+                    font-weight: 600
+                    text-align: right
+                    width: 80%
+                    align-self: flex-end
+                    margin-bottom: 4px
+                    margin-top: 7px
+    .button-with-icon
+        background: none
+        border: none
+        font-family: "El Messiri"
+        font-weight: 700
+        align-self: flex-start
+        color: #6E8236
+        display: flex
+        padding-left: 15px
+        .goback-icon
+            width: 20px
+            margin-right: 5px
+
+@media only screen and (max-width: 600px)
+    #events-page
+        .heading
+            font-size: 27px
+            text-align: center
+        .bgr
+            display: none
+        .events-cards
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
